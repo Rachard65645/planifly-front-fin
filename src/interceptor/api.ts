@@ -2,7 +2,7 @@ import type { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from "axio
 import axios from "axios";
 
 const axiosInstance: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:4000/api',
+    baseURL: 'https://backendplanifyfin.onrender.com/api',
 
 });
 
@@ -29,6 +29,6 @@ axiosInstance.interceptors.response.use(
         }
         return Promise.reject(error);
     }
-);7
+); 7
 
 export default axiosInstance;
