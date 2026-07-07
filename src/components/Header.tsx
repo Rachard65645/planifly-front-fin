@@ -55,7 +55,7 @@ export default function Header() {
 
                     <nav className="hidden lg:flex items-center gap-1">
                         {navigation.map((item) => {
-                            const Icon = item.icon;
+                            // const Icon = item.icon;
                             return (
                                 <Link
                                     key={item.name}

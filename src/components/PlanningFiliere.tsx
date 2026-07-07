@@ -96,26 +96,26 @@ export default function PlanningFiliere() {
             (eDebut <= cDebut && eFin >= cFin);
     };
 
-    const getEmploiForCell = (jourIndex: number, creneauIndex: number) => {
-        const dateStr = getDateOfWeek(jourIndex);
-        const creneaux = filiereType === "FI" ? CRENEAUX_FI : CRENEAUX_FA;
-        const creneau = creneaux[creneauIndex];
-        const filiereEmplois = getEmploisForFiliere();
+    // const getEmploiForCell = (jourIndex: number, creneauIndex: number) => {
+    //     const dateStr = getDateOfWeek(jourIndex);
+    //     const creneaux = filiereType === "FI" ? CRENEAUX_FI : CRENEAUX_FA;
+    //     const creneau = creneaux[creneauIndex];
+    //     const filiereEmplois = getEmploisForFiliere();
 
-        return filiereEmplois.find(emploi => {
-            const emploiDate = emploi.dateCours.split("T")[0];
-            if (emploiDate !== dateStr) return false;
-            return isEmploiInCreneau(emploi.heureDebut, emploi.heureFin, creneau.debut, creneau.fin);
-        });
-    };
+    //     return filiereEmplois.find(emploi => {
+    //         const emploiDate = emploi.dateCours.split("T")[0];
+    //         if (emploiDate !== dateStr) return false;
+    //         return isEmploiInCreneau(emploi.heureDebut, emploi.heureFin, creneau.debut, creneau.fin);
+    //     });
+    // };
 
-    const getEmploisForDay = (jourIndex: number) => {
-        const dateStr = getDateOfWeek(jourIndex);
-        const filiereEmplois = getEmploisForFiliere();
-        return filiereEmplois
-            .filter(emploi => emploi.dateCours.split("T")[0] === dateStr)
-            .sort((a, b) => a.heureDebut.localeCompare(b.heureDebut));
-    };
+    // const getEmploisForDay = (jourIndex: number) => {
+    //     const dateStr = getDateOfWeek(jourIndex);
+    //     const filiereEmplois = getEmploisForFiliere();
+    //     return filiereEmplois
+    //         .filter(emploi => emploi.dateCours.split("T")[0] === dateStr)
+    //         .sort((a, b) => a.heureDebut.localeCompare(b.heureDebut));
+    // };
 
     const formatDate = (dateStr: string) => {
         if (!dateStr) return "";
